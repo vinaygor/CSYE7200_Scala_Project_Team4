@@ -1,0 +1,27 @@
+language: scala
+
+jdk: oraclejdk8
+
+scala:
+   - 2.10.4
+   - 2.12.4
+
+branches:
+  only:
+  - develop
+# These directories are cached to S3 at the end of the build
+cache:
+  directories:
+    - $HOME/.ivy2/cache
+    - $HOME/.sbt/boot/
+
+
+script:
+   - cd $TRAVIS_BUILD_DIR/CSVKafka
+   - sbt ++$TRAVIS_SCALA_VERSION clean
+   - sbt ++$TRAVIS_SCALA_VERSION test
+
+before_cache:
+  # Tricks to avoid unnecessary cache updates
+  - find $HOME/.sbt -name "*.lock" | xargs rm
+  - find $HOME/.ivy2 -name "ivydata-*.properties" | xargs rm

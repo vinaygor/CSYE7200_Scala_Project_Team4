@@ -4,7 +4,7 @@
 		module="csvkafka-build"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
-		publication="20180322170504"
+		publication="20180408212728"
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>

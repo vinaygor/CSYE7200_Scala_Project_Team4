@@ -1,11 +1,8 @@
-import java.util.{Properties, Random}
+import java.util.{Properties}
 
-import org.apache.kafka.clients.producer.{KafkaProducer, ProducerRecord}
+import org.apache.kafka.clients.producer.{KafkaProducer}
 
-object MyKafkaProducer extends App {
-  val Stop = "Stop"
-
-  var counter = 0;
+object MyKafkaProducer {
 
   val props = new Properties()
   props.put("bootstrap.servers", "localhost:9092")
@@ -15,18 +12,7 @@ object MyKafkaProducer extends App {
 
   val producer = new KafkaProducer[String,Any](props)
 
-  val bufferedSource = io.Source.fromFile("/Users/akshayjain/Downloads/test.csv")
-  for (line <- bufferedSource.getLines) {
+  val TOPIC = "csvTopic"
 
-    println("--------------------------")
-    println(line);
 
-    producer.send(new ProducerRecord[String,Any]("my_topic1",line))
-
-    Thread.sleep(new Random().nextInt(2000)+1000)
-
-  }
-  bufferedSource.close
-
-  producer.close()
 }

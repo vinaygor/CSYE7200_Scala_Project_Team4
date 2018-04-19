@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../../Play Framework Practice/CSVKafka/.idea/modules/CSVKafka-csvkafka-build.iml" filepath="$PROJECT_DIR$/../../../Play Framework Practice/CSVKafka/.idea/modules/CSVKafka-csvkafka-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../Play Framework Practice/CSVKafka/.idea/modules/Play Framework Practice-csvkafka.iml" filepath="$PROJECT_DIR$/../../../Play Framework Practice/CSVKafka/.idea/modules/Play Framework Practice-csvkafka.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/csvkafka.iml" filepath="$PROJECT_DIR$/.idea/modules/csvkafka.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/csvkafka-build.iml" filepath="$PROJECT_DIR$/.idea/modules/csvkafka-build.iml" />
     </modules>
