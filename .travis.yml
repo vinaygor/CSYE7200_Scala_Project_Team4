@@ -1,0 +1,30 @@
+language: scala
+
+jdk: oraclejdk8
+
+scala:
+   - 2.10.4
+   - 2.12.4
+
+branches:
+  only:
+  - master
+
+cache:
+  directories:
+    - $HOME/.ivy2/cache
+    - $HOME/.sbt/boot/
+
+
+script:
+   - cd $TRAVIS_BUILD_DIR/CSVKafka
+   - sbt ++$TRAVIS_SCALA_VERSION clean
+   - sbt ++$TRAVIS_SCALA_VERSION test
+   - cd $TRAVIS_BUILD_DIR/play-try
+   - sbt ++$TRAVIS_SCALA_VERSION clean
+   - sbt ++$TRAVIS_SCALA_VERSION test
+
+before_cache:
+  # Tricks to avoid unnecessary cache updates
+  - find $HOME/.sbt -name "*.lock" | xargs rm
+  - find $HOME/.ivy2 -name "ivydata-*.properties" | xargs rm
